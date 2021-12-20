@@ -1,1 +1,35 @@
-# ZaFunny
+local words = {
+    'ur bad son',
+    'seed',
+    'you died by a random ur so trash',
+    'how'd you die son',
+    'clown',
+    'sonned',
+    'how did u miss that many shots',
+    'get better son',
+    'bro who even teached you to play this game',
+    'you got airshotteed son ur so bad',
+}
+
+local player = game.Players.LocalPlayer
+local keybind = 'v'
+
+local event = game.ReplicatedStorage.DefaultChatSystemChatEvents.SayMessageRequest
+
+player:GetMouse().KeyDown:connect(function(key)
+    if key == keybind then
+        event:FireServer(words[math.random(#words)], "All")
+    end
+end)
+
+game.StarterGui:SetCore("SendNotification",{
+            Title = "Trash Talk Script";
+            Text = "Press "V" on Your Keyboard For It To Work!";
+            Duration = 5;
+        })
+    wait()
+    game.StarterGui:SetCore("SendNotification",{
+            Title = "Anything wrong?";
+            Text = "DM (@xan#8568) if something's wrong!";
+            Duration = 5;
+        })
